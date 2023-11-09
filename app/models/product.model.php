@@ -1,8 +1,9 @@
 <?php
 require_once 'model.php';
+
 class productModel extends Model {
     
-    public function getProducts() {
+    function getProducts() {
         $query = $this->db->prepare('SELECT * FROM products');
         $query->execute();
 
@@ -10,7 +11,7 @@ class productModel extends Model {
 
         return $products;
     }
-    public function getCategorys(){
+    function getCategorys(){
         $query = $this->db->prepare('SELECT * FROM categorys');
         $query->execute();
 
@@ -18,15 +19,16 @@ class productModel extends Model {
 
         return $categorys;
     }
-    public function getProductsByCategory($id){
-        $query = $this->db->prepare('SELECT * FROM products WHERE id_categoria=?');
+    function getProduct($id){
+        $query = $this->db->prepare('SELECT * FROM products WHERE id_producto = ?');
         $query->execute([$id]);
 
-        $tasks = $query->fetchAll(PDO::FETCH_OBJ);
+        //product es un producto solo
+        $product = $query->fetch(PDO::FETCH_OBJ);
 
-
-        return $tasks;
+        return $product;
     }
+    
 
 
 
