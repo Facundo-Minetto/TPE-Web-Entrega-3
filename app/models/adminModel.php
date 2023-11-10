@@ -19,6 +19,15 @@ class adminModel extends Model{
 
         return $categorys;
     }
+    public function getCategory($id)
+    {
+        $query = $this->db->prepare('SELECT * FROM categorys WHERE id_categoria=?');
+        $query->execute([$id]);
+
+        $categorys = $query->fetchAll(PDO::FETCH_OBJ);
+
+        return $categorys;
+    }
     public function removeProduct($id){
         $query = $this->db->prepare('DELETE FROM products WHERE id_producto=?');
         $query->execute([$id]);
@@ -39,9 +48,9 @@ class adminModel extends Model{
     
         return $this->db ->lastInsertId();
     }
-    public function updateCategory($categoryName, $id){
+    public function updateCategory($nombre, $id){
         $query = $this->db->prepare('UPDATE `categorys` SET `nombre` = ? WHERE `categorys`.`id_categoria` = ?;');
-        $query->execute([$categoryName,$id]);
+        $query->execute([$nombre, $id]);
     }
     public function deleteCategory($categoryId){
         $query = $this->db-> prepare('DELETE FROM categorys WHERE id_categoria=?');

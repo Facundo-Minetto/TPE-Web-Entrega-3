@@ -5,12 +5,17 @@
     
     $router = new Router();
 
-    #                 endpoint                        verbo             controller                  metodo
-    $router->addRoute('productos',                    'GET',            'productApiController',     'get');            //consigna 2
-    $router->addRoute('productos/:ID',                'GET',            'productApiController',     'get');            //consigna 4
-    $router->addRoute('administrador/productos',      'POST',           'AdminController',          'addProduct');     //consigna 5
-    $router->addRoute('administrador/productos/:ID',  'PUT',            'AdminController',          'updateProduct');  //consigna 5
-    $router->addRoute('administrador/productos/:ID',  'DELETE',         'AdminController',          'delete'); 
+    #                 endpoint                              verbo             controller                  metodo
+    $router->addRoute('productos',                          'GET',            'productApiController',     'get');               //consigna 2
+    $router->addRoute('productos/:ID',                      'GET',            'productApiController',     'get');               //consigna 4
+    $router->addRoute('administrador/productos',            'POST',           'AdminController',          'addProduct');        //consigna 5
+    $router->addRoute('administrador/productos/:ID',        'PUT',            'AdminController',          'updateProduct');     //consigna 5
+    $router->addRoute('administrador/productos/:ID',        'DELETE',         'AdminController',          'delete'); 
 
+    $router->addRoute('administrador/categorias',           'GET',            'AdminController',          'getCategorys');      //consigna 2
+    $router->addRoute('administrador/categorias/:ID',       'GET',            'AdminController',          'getCategorys');      //consigna 4
+    $router->addRoute('administrador/categorias',           'POST',           'AdminController',          'addCategory');       //consigna 5
+    $router->addRoute('administrador/categorias/:ID',       'PUT',            'AdminController',          'updateCategory');    //consigna 5
+    $router->addRoute('administrador/categorias/:ID',       'DELETE',         'AdminController',          'deleteCategory');
 
     $router->route($_GET['resource'], $_SERVER['REQUEST_METHOD']);

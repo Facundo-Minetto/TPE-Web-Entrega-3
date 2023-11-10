@@ -11,9 +11,9 @@
         }
         function delete($params = null){
             $id = $params[':ID'];
-            $tarea = $this->model->getProduct($params[':ID']);
+            $product = $this->model->getProduct($params[':ID']);
 
-            if($tarea){
+            if($product){
                 $this->model->deleteProduct($id);
                 $this->view->response('El producto con id = ' .$id. ' ha sido borrado', 200);
             }
@@ -49,6 +49,60 @@
             }
             else{
                 $this->view->response('El producto con id = ' .$product_id. ' no existe', 404);
+            }
+        }
+
+
+        function getCategorys($params = []){
+            if(empty($params)){
+                $categorys = $this->model->getCategorys();
+                $this->view->response($categorys, 200);
+            }
+            else{
+                $category = $this->model->getCategory($params[':ID']);
+                if(!empty($category)){
+                    $this->view->response($category, 200);
+                }
+                else{
+                    $this->view->response('El id categoria = ' .$params[':ID']. 'no existe', 404);
+                }
+            }
+        }
+        function addCategory($params = []){
+            $body = $this->getData();
+
+            $nombre = $body->nombre;
+
+            $id = $this->model->insertCategory($nombre);
+
+            $this->view->response('Categoria insertada correctamente. id = ' .$id, 201);
+        }
+        function updateCategory($params = []){
+            $id_categoria = $params[':ID'];
+            $categoria = $this->model->getCategory($id_categoria);
+
+            if($categoria){
+                $body = $this->getData();
+
+                $nombre = $body->nombre;
+
+                $category = $this->model->updateCategory($nombre, $id_categoria);
+                $this->view->response('La categoria con id = ' .$id_categoria. 'ha sido modificada exitosamente', 200);
+            }
+            else{
+                $this->view->response('La categoria = ' .$id_categoria. 'no existe', 404);
+            }
+        }
+        function deleteCategory($params = []){
+            $id_categoria = $params[':ID'];
+            $categoria = $this->model->getCategory($id_categoria);
+
+            if($categoria){
+                $this->model->deleteCategory($id_categoria);
+                $this->view->response('La categoria con id = ' .$id_categoria. 'ha sido eliminada exitosamente', 200);
+            }
+            else{
+                $this->view->response('La categoria con el id = ' .$id_categoria. 'no existe', 404);
             }
         }
     }
