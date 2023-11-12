@@ -10,15 +10,15 @@
     #                 endpoint                                                verbo                       controller                       metodo
     $router->addRoute('productos',                                            'GET',                      'productApiController',          'getProducts');           //consigna 2
     $router->addRoute('productos/:ID',                                        'GET',                      'productApiController',          'getProducts');           //consigna 4
-    $router->addRoute('administrador/productos',                              'POST',                     'AdminController',               'addProduct');            //consigna 5
-    $router->addRoute('administrador/productos/:ID',                          'PUT',                      'AdminController',               'updateProduct');         //consigna 5
-    $router->addRoute('administrador/productos/:ID/:subrecurso',              'GET',                      'productApiController',          'getProducts');     
+    $router->addRoute('productos',                                            'POST',                     'AdminController',               'addProduct');            //consigna 5
+    $router->addRoute('productos/:ID',                                        'PUT',                      'AdminController',               'updateProduct');         //consigna 5
+    $router->addRoute('productos/:ID/:subrecurso',                            'GET',                      'productApiController',          'getProducts');     
 
     $router->addRoute('categorias',                                           'GET',                      'categoriasController',          'getCategorys');          //consigna 2
     $router->addRoute('categorias/:ID',                                       'GET',                      'categoriasController',          'getCategorys');          //consigna 4
-    $router->addRoute('administrador/categorias',                             'POST',                     'AdminController',               'addCategory');           //consigna 5
-    $router->addRoute('administrador/categorias/:ID',                         'PUT',                      'AdminController',               'updateCategory');        //consigna 5
-    $router->addRoute('administrador/categorias/:ID/:subrecurso',             'GET',                      'categoriasController',          'getCategorys');
+    $router->addRoute('categorias',                                           'POST',                     'AdminController',               'addCategory');           //consigna 5
+    $router->addRoute('categorias/:ID',                                       'PUT',                      'AdminController',               'updateCategory');        //consigna 5
+    $router->addRoute('categorias/:ID/:subrecurso',                           'GET',                      'categoriasController',          'getCategorys');
 
     $router->addRoute('usuario/token',                                        'GET',                      'UsuarioApiController',          'getToken');
 

@@ -11,6 +11,7 @@
         }
         
         function addProduct($params = []){
+            /*hipotetica verificacion a usuario pidiendo token*/ 
             /*$user = $this->authHelper->UsuarioActual();
             if(!$user){
                 $this->view->response('Unauthorized', 401);
@@ -32,6 +33,7 @@
             $this->view->response('Se ha insertado el producto con el id= ' .$id, 201);
         }
         function updateProduct($params = []){
+            /*hipotetica verificacion a usuario pidiendo token*/ 
             /*$user = $this->authHelper->UsuarioActual();
             if(!$user){
                 $this->view->response('Unauthorized', 401);
@@ -61,6 +63,7 @@
             }
         }
         function addCategory($params = []){
+            /*hipotetica verificacion a usuario pidiendo token*/ 
             /*$user = $this->authHelper->UsuarioActual();
             if(!$user){
                 $this->view->response('Unauthorized', 401);
@@ -80,6 +83,7 @@
             $this->view->response('Categoria insertada correctamente. id = ' .$id, 201);
         }
         function updateCategory($params = []){
+            /*hipotetica verificacion a usuario pidiendo token*/ 
             /*$user = $this->authHelper->UsuarioActual();
             if(!$user){
                 $this->view->response('Unauthorized', 401);
@@ -98,7 +102,7 @@
 
                 $nombre = $body->nombre;
 
-                $category = $this->model->updateCategory($nombre, $id_categoria);
+                $this->model->updateCategory($nombre, $id_categoria);
                 $this->view->response('La categoria con id = ' .$id_categoria. ' ha sido modificada exitosamente', 200);
             }
             else{
