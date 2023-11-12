@@ -127,5 +127,4 @@ URL DEL ENDPOINT -> localhost/web2/TPE-Web-Entrega-3/api/productos?sort=precio&o
 
 Lo mismo si se quisiera hacer de manera descendente.
 
-Tambien se podria ordenar de manera ascendente o descendente, el id_producto o id_categoria (campos dentro de
-la tabla products)
+Tambien se podria ordenar de manera ascendente o descendente, el id_producto o id_categoria (todos los campos dentro de la tabla products)
