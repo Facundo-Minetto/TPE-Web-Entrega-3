@@ -3,3 +3,5 @@
     const MYSQL_PASS = '';
     const MYSQL_DB = 'tpeweb';
     const MYSQL_HOST = 'localhost';
+    const JWT_KEY = 'admin';
+    const JWT_EXP = '3600'; 
