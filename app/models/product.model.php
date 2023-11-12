@@ -28,6 +28,20 @@ class productModel extends Model {
 
         return $product;
     }
+    function getProductosOrdenados($order, $sort){
+        $query = $this->db->prepare('SELECT * FROM products ORDER BY $sort $order');
+        $query->execute();
+
+        $products = $query->fetchAll(PDO::FETCH_OBJ);
+
+        return $products;
+    }
+    function ListProduc($adicional) {
+        $query = $this->db->prepare("SELECT id_producto, precio, id_categoria FROM products $adicional;");
+        $query->execute();
+        $productos = $query->fetchAll(PDO::FETCH_OBJ);
+        return $productos;//para que se pueda incluir 
+    }
     
 
 

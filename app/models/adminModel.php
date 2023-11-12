@@ -19,14 +19,14 @@ class adminModel extends Model{
 
         return $categorys;
     }
-    public function getCategory($id)
+    public function getCategoryById($id)
     {
         $query = $this->db->prepare('SELECT * FROM categorys WHERE id_categoria=?');
         $query->execute([$id]);
 
-        $categorys = $query->fetchAll(PDO::FETCH_OBJ);
+        $category = $query->fetch(PDO::FETCH_OBJ);
 
-        return $categorys;
+        return $category;
     }
     public function removeProduct($id){
         $query = $this->db->prepare('DELETE FROM products WHERE id_producto=?');
