@@ -29,6 +29,8 @@ METODOS: GET Y PUT
 
 Con el metodo GET se esta obteniendo la informacion de un producto especifico, enviando su ID.
 
+Ejemplo de endpoint:  localhost/web2/TPE-Web-Entrega-3/api/productos/1
+
 Mismo ejemplo que el anterior, un JSON con la informacion:
 {
         "id_producto": 1,
@@ -56,7 +58,8 @@ Saldria esto:
 
 El precio de el producto con ID 4 es "15000".
 
-Asi tambien se podria con el campo "nombre_producto"
+Asi tambien se podria con el campo "nombre_producto", que mostraria, segun el id enviado, el nombre de ese producto
+especifico
 
 -------------------------------------------------------------------------------------------
 
@@ -115,19 +118,21 @@ URL DEL ENDPOINT -> localhost/web2/TPE-Web-Entrega-3/api/usuario/token
 
 METODO: GET
 
-En este caso al poner este endpoint lo que se tendria que poner en un "Basic auth" es el nombre de usuario
-y contraseña. Al ingresar la informacion correctamente (usuario:webadmin, password:admin) te genera un token
-necesario para en un futuro caso de que por ejemplo, quiera modificar una categoria, primero tendria que 
+En este caso al poner este endpoint lo que se tendria que enviar a traves del apartado "authorization", es un 
+"Basic auth" con el nombre de usuario y contraseña. Al ingresar la informacion correctamente (usuario:webadmin, password:admin) 
+te genera un token necesario para en un futuro caso de que por ejemplo, quiera modificar una categoria, primero tendria que 
 enviar ese token y verificarse para seguir con el servicio.
 
 -------------------------------------------------------------------------------------------
 
 URL DEL ENDPOINT -> localhost/web2/TPE-Web-Entrega-3/api/productos?sort=precio&order=asc
 
-Este endpoint lo que hace es ordenar el campo "precio" de la lista de productos de manera ascendente.
+Este endpoint lo que hace es ordenar y mostrar el campo "precio" de la lista de productos de manera ascendente.
 
 URL DEL ENDPOINT -> localhost/web2/TPE-Web-Entrega-3/api/productos?sort=precio&order=desc
 
 Lo mismo si se quisiera hacer de manera descendente.
 
 Tambien se podria ordenar de manera ascendente o descendente, el id_producto o id_categoria (todos los campos dentro de la tabla products)
+
+Ejemplo de endpoint: localhost/web2/TPE-Web-Entrega-3/api/productos?sort=id_producto&order=desc
