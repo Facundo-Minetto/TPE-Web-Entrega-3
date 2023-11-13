@@ -1,4 +1,7 @@
 # TPE-Web-Entrega-3
+INTEGRANTES: Facundo Minetto (@facundominetto@gmail.com) 
+
+-------------------------------------------------------------------------------------------
 DOCUMENTACION PARA SABER COMO CONSUMIR LA API: 
 
 -------------------------------------------------------------------------------------------
